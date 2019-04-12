@@ -1,4 +1,4 @@
-# UIViewCircleAnimation
+# HZAnimation
 一个使用CABasicAnimation实现的动画封装。用于过渡UIView的展示隐藏。
 ## Sample gif:
 ![Sample](https://github.com/Hadesxiye/UIViewCircleAnimation/blob/master/gif/HZViewAnimationSampleGIF.gif)
