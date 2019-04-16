@@ -75,13 +75,13 @@
     
     [view addSubview:button];
     [self.view addSubview:view];
-    [view HZAnimationShowDuration:0.5  Completed:^{
+    [view HZCircleShowAnimationDuration:0.5  Completed:^{
         NSLog(@"动画结束");
     }];
 }
 
 - (void)hideView{
-    [view HZAnimationHideDuration:0.5 Completed:^{
+    [view HZCircleHideAnimationDuration:0.5 Completed:^{
         [self->view removeFromSuperview];
         NSLog(@"动画结束");
     }];

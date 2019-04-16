@@ -14,13 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^HZAnimationBlock)(void);
 
 /**
- 根据UIView的backgroundColor展示UIView
+ 圆形遮罩显示动画
  */
-- (void)HZAnimationShowDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed;
+- (void)HZCircleShowAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed;
 /**
- 根据UIView的backgroundColor隐藏UIView
+ 圆形遮罩隐藏动画
  */
-- (void)HZAnimationHideDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed;
+- (void)HZCircleHideAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed;
 
 /**
  自定义Color展示UIView

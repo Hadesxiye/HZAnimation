@@ -9,7 +9,7 @@
 #import "UIView+HZAnimation.h"
 @implementation UIView (HZAnimation)
 
-- (void)HZAnimationShowDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed{
+- (void)HZCircleShowAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed{
     
     [self HZAnimationShowDuration:animationTime CustomColor:self.backgroundColor SubviewsAnimation:YES Completed:^{
         if (completed) {
@@ -19,7 +19,7 @@
     
 }
 
-- (void)HZAnimationHideDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed{
+- (void)HZCircleHideAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed{
     
     [self HZAnimationHideDuration:animationTime CustomColor:self.backgroundColor SubviewsAnimation:YES Completed:^{
         if (completed) {
