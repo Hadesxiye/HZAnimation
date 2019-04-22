@@ -91,9 +91,6 @@
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     self.layer.mask = maskLayer;
 
-    
-    
-    
     //创建一个关于Path的CABasicAnimation动画从originalCircle到finalCircle
     CABasicAnimation *hzAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
     hzAnimation.fromValue = (__bridge id)(originalCircle.CGPath);
@@ -101,7 +98,8 @@
     hzAnimation.duration = animationTime;
     hzAnimation.delegate = self;
 //    //填充效果：动画结束后，动画将保持最后的表现状态
-//    hzAnimation.fillMode = kCAFillModeForwards;
+    hzAnimation.fillMode = kCAFillModeForwards;
+    hzAnimation.removedOnCompletion = NO;
     //记录子视图frame并修改
     if (isSubviewsAnimation) {
 
