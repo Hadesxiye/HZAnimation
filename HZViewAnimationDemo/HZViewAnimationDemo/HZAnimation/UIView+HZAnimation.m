@@ -9,9 +9,9 @@
 #import "UIView+HZAnimation.h"
 @implementation UIView (HZAnimation)
 
-- (void)HZCircleShowAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed{
+- (void)hzCircleShowAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed{
     
-    [self HZAnimationShowDuration:animationTime CustomColor:self.backgroundColor SubviewsAnimation:YES Completed:^{
+    [self hzAnimationShowDuration:animationTime CustomColor:self.backgroundColor SubviewsAnimation:YES Completed:^{
         if (completed) {
             completed();
         }
@@ -19,9 +19,9 @@
     
 }
 
-- (void)HZCircleHideAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed{
+- (void)hzCircleHideAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed{
     
-    [self HZAnimationHideDuration:animationTime CustomColor:self.backgroundColor SubviewsAnimation:YES Completed:^{
+    [self hzAnimationHideDuration:animationTime CustomColor:self.backgroundColor SubviewsAnimation:YES Completed:^{
         if (completed) {
             completed();
         }
@@ -29,9 +29,9 @@
     
 }
 
-- (void)HZAnimationShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed{
+- (void)hzAnimationShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed{
     
-    [self HZAnimationShowDuration:animationTime CustomColor:color SubviewsAnimation:YES Completed:^{
+    [self hzAnimationShowDuration:animationTime CustomColor:color SubviewsAnimation:YES Completed:^{
         if (completed) {
             completed();
         }
@@ -39,9 +39,9 @@
     
 }
 
-- (void)HZAnimationHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed{
+- (void)hzAnimationHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed{
     
-    [self HZAnimationHideDuration:animationTime CustomColor:color SubviewsAnimation:YES Completed:^{
+    [self hzAnimationHideDuration:animationTime CustomColor:color SubviewsAnimation:YES Completed:^{
         if (completed) {
             completed();
         }
@@ -49,9 +49,9 @@
     
 }
 
-- (void)HZAnimationWithoutSubviewsShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed{
+- (void)hzAnimationWithoutSubviewsShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed{
     
-    [self HZAnimationShowDuration:animationTime CustomColor:color SubviewsAnimation:NO Completed:^{
+    [self hzAnimationShowDuration:animationTime CustomColor:color SubviewsAnimation:NO Completed:^{
         if (completed) {
             completed();
         }
@@ -59,9 +59,9 @@
     
 }
 
-- (void)HZAnimationWithoutSubviewsHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed{
+- (void)hzAnimationWithoutSubviewsHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed{
     
-    [self HZAnimationHideDuration:animationTime CustomColor:color SubviewsAnimation:NO Completed:^{
+    [self hzAnimationHideDuration:animationTime CustomColor:color SubviewsAnimation:NO Completed:^{
         if (completed) {
             completed();
         }
@@ -70,7 +70,7 @@
 }
 
 #pragma mark -- HZAnimation detail ------ =͟͟͞͞⊂(⊂ 'ω')
-- (void)HZAnimationShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color SubviewsAnimation:(BOOL)isSubviewsAnimation Completed:(HZAnimationBlock)completed{
+- (void)hzAnimationShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color SubviewsAnimation:(BOOL)isSubviewsAnimation Completed:(HZAnimationBlock)completed{
     
     //记录父视图的属性
     UIColor* originalColor = self.backgroundColor;
@@ -134,7 +134,7 @@
 
 }
 
-- (void)HZAnimationHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color SubviewsAnimation:(BOOL)isSubviewsAnimation Completed:(HZAnimationBlock)completed{
+- (void)hzAnimationHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color SubviewsAnimation:(BOOL)isSubviewsAnimation Completed:(HZAnimationBlock)completed{
     
     //记录父视图的属性
     CGFloat originalWid = self.frame.size.width;

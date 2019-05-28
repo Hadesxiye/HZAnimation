@@ -16,30 +16,30 @@ typedef void (^HZAnimationBlock)(void);
 /**
  圆形遮罩显示动画
  */
-- (void)HZCircleShowAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed;
+- (void)hzCircleShowAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed;
 /**
  圆形遮罩隐藏动画
  */
-- (void)HZCircleHideAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed;
+- (void)hzCircleHideAnimationDuration:(NSTimeInterval)animationTime Completed:(HZAnimationBlock)completed;
 
 /**
  自定义Color展示UIView
  */
-- (void)HZAnimationShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed;
+- (void)hzAnimationShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed;
 /**
  自定义Color隐藏UIView
  */
-- (void)HZAnimationHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed;
+- (void)hzAnimationHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed;
 
 /**
  无子视图动画效果，自定义Color展示UIView
  */
-- (void)HZAnimationWithoutSubviewsShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed;
+- (void)hzAnimationWithoutSubviewsShowDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed;
 
 /**
  无子视图动画效果，自定义Color隐藏UIView
  */
-- (void)HZAnimationWithoutSubviewsHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed;
+- (void)hzAnimationWithoutSubviewsHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color Completed:(HZAnimationBlock)completed;
 
 @end
 

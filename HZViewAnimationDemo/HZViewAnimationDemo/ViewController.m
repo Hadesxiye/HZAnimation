@@ -81,7 +81,7 @@
     
     [view addSubview:button];
     [self.view addSubview:view];
-    [view HZCircleShowAnimationDuration:0.5  Completed:^{
+    [view hzCircleShowAnimationDuration:0.5  Completed:^{
         NSLog(@"动画结束");
     }];
 }
@@ -91,7 +91,7 @@
         return;
     }
     _isShow = !_isShow;
-    [view HZCircleHideAnimationDuration:0.5 Completed:^{
+    [view hzCircleHideAnimationDuration:0.5 Completed:^{
         [self->view removeFromSuperview];
         NSLog(@"动画结束");
     }];
