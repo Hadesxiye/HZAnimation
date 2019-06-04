@@ -135,12 +135,12 @@
 }
 
 - (void)hzAnimationHideDuration:(NSTimeInterval)animationTime CustomColor:(UIColor *)color SubviewsAnimation:(BOOL)isSubviewsAnimation Completed:(HZAnimationBlock)completed{
-    
+
     //记录父视图的属性
     CGFloat originalWid = self.frame.size.width;
     CGFloat originalHei = self.frame.size.height;
     CGFloat animationViewLength;
-    
+
     //计算动画视图圆的半径
     animationViewLength = sqrt(originalWid * originalWid + originalHei * originalHei)/2 ;
     //绘制路径
@@ -152,6 +152,18 @@
     maskLayer.path = finalCircle.CGPath;
     
     self.layer.mask = maskLayer;
+
+    //记录子视图frame，在动画结束时还原
+    NSMutableArray* subviewsFrameArr = [NSMutableArray new];
+    if (isSubviewsAnimation) {
+        
+        for (UIView* viewObj in self.subviews) {
+            
+            [subviewsFrameArr addObject:[NSValue valueWithCGRect:viewObj.frame]];
+            
+        }
+    }
+    
     
     //创建一个关于Path的CABasicAnimation动画从originalCircle到finalCircle
     CABasicAnimation *hzAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
@@ -160,21 +172,29 @@
     hzAnimation.duration = animationTime;
     hzAnimation.delegate = self;
 
-
     self.layer.masksToBounds = YES;
     [maskLayer addAnimation:hzAnimation forKey:@"path"];
+
     [UIView animateWithDuration:animationTime animations:^{
         
         if (isSubviewsAnimation) {
-            
+
             for (UIView* viewObj in self.subviews) {
                 viewObj.frame = CGRectMake(originalWid/2, originalHei/2, 0, 0);
             }
-            
+
         }
         
     } completion:^(BOOL finished) {
         
+        if (isSubviewsAnimation) {
+            
+            for (int i = 0; i < self.subviews.count; i ++) {
+                UIView* viewObj = self.subviews[i];
+                NSValue* frameValue = subviewsFrameArr[i];
+                viewObj.frame = frameValue.CGRectValue;
+            }
+        }
         completed();
     }];
 
@@ -183,7 +203,6 @@
 
 #pragma mark - CABasicAnimation的Delegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    NSLog(@"caani end");
     //清除 fromVC 的 mask
     self.layer.mask = nil;
     
